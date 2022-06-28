@@ -1,0 +1,17 @@
+.persons-table {
+  &__filters {
+    min-height: 100px;
+  }
+
+  &__sex-filter {
+    margin-top: 16px;
+  }
+
+  &__clear-filters {
+    padding: 0 !important;
+  }
+
+  &__add {
+    margin-top: 32px;
+  }
+}

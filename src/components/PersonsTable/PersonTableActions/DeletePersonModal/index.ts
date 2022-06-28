@@ -1,0 +1,1 @@
+export { DeletePersonModal } from './DeletePersonModal'

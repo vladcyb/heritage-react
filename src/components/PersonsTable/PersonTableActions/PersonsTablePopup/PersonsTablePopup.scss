@@ -1,0 +1,23 @@
+.persons-table-popup {
+  position: absolute;
+  list-style-type: none;
+  background: white;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  border-radius: 4px;
+  background-clip: padding-box;
+  padding-inline-start: 0;
+
+  li {
+    padding: 8px 32px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: #bfbfbf;
+    }
+  }
+
+  &__icon {
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,52 @@
+@use "./node_modules/include-media/dist/include-media" as *;
+@use "./assets/scss/vars" as *;
+@use "./assets/scss/mixins" as *;
+
+#root {
+  min-height: 100vh;
+}
+
+:root {
+  /* variables */
+  --header-height: 64px;
+  --content-padding-inline: 10px;
+  --content-padding-block: 32px;
+  --animation-duration: 400ms;
+  --animation-shape: ease-out;
+  --font-size: 14px;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    --content-padding-inline: 24px;
+    --content-padding-block: 64px;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    --content-padding-block: 64px;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    --content-padding-inline: 32px;
+    --font-size: 16px;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    --content-padding-inline: 64px;
+  }
+
+  @media screen and (min-width: $breakpoint-xxl) {
+    --content-padding-inline: 200px;
+    --font-size: 18px;
+  }
+}
+
+body {
+  background: #f0f2f5;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+}

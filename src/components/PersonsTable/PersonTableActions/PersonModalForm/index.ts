@@ -1,0 +1,1 @@
+export { PersonModalForm } from './PersonModalForm'

@@ -1,0 +1,1 @@
+export { PersonsTablePopup } from './PersonsTablePopup'
