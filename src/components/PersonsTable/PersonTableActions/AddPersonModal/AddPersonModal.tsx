@@ -1,15 +1,16 @@
 import { FormProps, message, Modal } from 'antd'
 import { useSelector } from 'react-redux'
-import { isMoment } from 'moment'
 import { useForm } from 'antd/es/form/Form'
+
 import { useAppDispatch } from '@app/slices'
-import { PersonsThunk } from '@slices/personsSlice/thunk'
 import { getPersonsLoading } from '@slices/personsSlice/selectors'
-import { ERRORS } from '@shared/constants'
 import { PersonModalForm } from '@components/PersonsTable/PersonTableActions/PersonModalForm'
+import { SexEnum } from '@app/enums/SexEnum'
+import { PersonsThunk } from '@app/slices/personsSlice/thunk'
+import { ERRORS } from '@app/shared/constants'
 
 interface IAddPersonModalProps {
-  visible: boolean
+  open: boolean
   onClose: () => void
 }
 
@@ -18,7 +19,15 @@ const layout: FormProps = {
   wrapperCol: { span: 20 },
 }
 
-export const AddPersonModal = ({ visible, onClose }: IAddPersonModalProps) => {
+type AddPersonModalFormType = {
+  surname: string
+  name: string
+  patronymic: string
+  sex: SexEnum
+  dateOfBirth?: string
+}
+
+export const AddPersonModal = ({ open: visible, onClose }: IAddPersonModalProps) => {
   const [form] = useForm()
   const dispatch = useAppDispatch()
   const loading = useSelector(getPersonsLoading)
@@ -27,18 +36,15 @@ export const AddPersonModal = ({ visible, onClose }: IAddPersonModalProps) => {
     const dateOfBirth = form.getFieldValue('dateOfBirth')
     const formValues = form.getFieldsValue()
 
-    const data = {
+    const data: AddPersonModalFormType = {
       surname: formValues.surname.trim(),
       name: formValues.name.trim(),
       patronymic: formValues.patronymic.trim(),
       sex: formValues.sex,
-      dateOfBirth: formValues.dateOfBirth,
     }
 
-    if (isMoment(dateOfBirth)) {
-      data.dateOfBirth = data.dateOfBirth.format('YYYY-MM-DD')
-    } else {
-      delete data.dateOfBirth
+    if (dateOfBirth?.isValid?.()) {
+      data.dateOfBirth = dateOfBirth.format('YYYY-MM-DD')
     }
 
     const result = await dispatch(PersonsThunk.create(data))
@@ -53,7 +59,7 @@ export const AddPersonModal = ({ visible, onClose }: IAddPersonModalProps) => {
   return (
     <Modal
       title="Добавить человека"
-      visible={visible}
+      open={visible}
       onCancel={onClose}
       transitionName=""
       centered

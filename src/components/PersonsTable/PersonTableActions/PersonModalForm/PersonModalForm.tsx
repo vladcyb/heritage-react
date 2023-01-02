@@ -1,6 +1,7 @@
 import { DatePicker, Form, Input, Radio } from 'antd'
 import { FormInstance } from 'antd/lib/form/hooks/useForm'
 import { FormProps } from 'antd/es/form'
+
 import { SexEnum } from '@enums/SexEnum'
 import { Person } from '@models/Person'
 
@@ -39,7 +40,7 @@ export const PersonModalForm = ({ form, ...props }: IPersonModalFormProps) => (
     </Form.Item>
     <label htmlFor="dateOfBirth">Дата рождения:</label>
     <Form.Item name="dateOfBirth">
-      <DatePicker picker="date" />
+      <DatePicker picker="date" placeholder='Выберите дату' />
     </Form.Item>
   </Form>
 )

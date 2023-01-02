@@ -2,9 +2,11 @@ import { Button, Input } from 'antd'
 import { useState } from 'react'
 import { FilterDropdownProps } from 'antd/es/table/interface'
 import { SearchOutlined } from '@ant-design/icons'
+
 import { useAppDispatch } from '@app/slices'
 import { actions as personsActions } from '@slices/personsSlice/actions'
 import { Person } from '@models/Person'
+
 import './SearchFilterDropdown.scss'
 
 interface ISearchFilterDropdownProps extends Pick<FilterDropdownProps, 'confirm'> {

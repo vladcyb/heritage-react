@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
 import { StateType } from './types'
 import { UserThunk } from './thunk'
 

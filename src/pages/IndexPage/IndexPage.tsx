@@ -1,4 +1,5 @@
 import Title from 'antd/es/typography/Title'
+
 import { PersonsTable } from '@components/PersonsTable'
 
 

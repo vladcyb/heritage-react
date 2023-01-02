@@ -1,11 +1,14 @@
 import { Modal } from 'antd'
 import { useSelector } from 'react-redux'
+import Text from 'antd/es/typography/Text'
+
 import { getAllPersons, getPersonsLoading } from '@slices/personsSlice/selectors'
 import { PersonsThunk } from '@slices/personsSlice/thunk'
 import { useAppDispatch } from '@app/slices'
 import { renderDataItem } from '@shared/helpers/renderDataItem'
+
+
 import './DeletePersonModal.scss'
-import Text from 'antd/es/typography/Text'
 
 
 interface IDeletePersonModalProps {
@@ -57,7 +60,7 @@ export const DeletePersonModal = ({ onClose, id }: IDeletePersonModalProps) => {
     <Modal
       className="delete-person-modal"
       title="Удалить человека"
-      visible={!!id}
+      open={!!id}
       onCancel={onClose}
       onOk={onDelete}
       okButtonProps={{

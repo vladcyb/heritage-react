@@ -1,6 +1,7 @@
 import { ColumnType } from 'antd/lib/table/interface'
-import { Person } from '@models/Person'
 import { SearchOutlined } from '@ant-design/icons'
+
+import { Person } from '@models/Person'
 import { KeysMatching } from '@shared/helpers/KeysMatching'
 import { renderDataItem } from '@shared/helpers/renderDataItem'
 import { SearchFilterDropdown } from '@components/shared/FilterDropdown'

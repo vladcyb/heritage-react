@@ -1,6 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+
 import PersonService, { IPersonTableParams } from '@services/PersonService'
 import { ERRORS } from '@shared/constants'
+
 import { actions } from './actions'
 import { CreatePersonPayloadType, UpdatePersonPayloadType } from './types'
 

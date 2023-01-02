@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom'
 import { Result } from 'antd'
+
+import { ERRORS } from '@shared/constants'
 import { appUrls } from '@shared/appUrls'
 
-export const Page404 = () => (
+export const ErrorPage = () => (
   <Result
-    status="404"
-    title="404"
-    subTitle="Страница не найдена."
+    status="500"
+    title={ERRORS.somethingWentWrong}
+    subTitle="Повторите позднее."
     extra={<Link to={appUrls.index}>На главную</Link>}
   />
 )

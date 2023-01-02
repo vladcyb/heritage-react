@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button } from 'antd'
+
 import { AddPersonModal } from './AddPersonModal'
 import { DeletePersonModal } from './DeletePersonModal'
 import { PersonsTablePopup } from './PersonsTablePopup'
@@ -28,7 +29,7 @@ export const PersonTableActions = ({ popup }: IPersonTableActionsProps) => {
         Добавить
       </Button>
       <AddPersonModal
-        visible={isCreating}
+        open={isCreating}
         onClose={() => {
           setIsCreating(false) }
         }

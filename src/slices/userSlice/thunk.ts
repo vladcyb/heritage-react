@@ -1,5 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+
 import AuthService, { ILoginRequest } from '@services/AuthService'
+
 import { actions } from './actions'
 
 export const UserThunk = {

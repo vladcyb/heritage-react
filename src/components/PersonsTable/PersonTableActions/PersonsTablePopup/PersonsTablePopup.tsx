@@ -1,5 +1,6 @@
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
 import Text from 'antd/es/typography/Text'
+
 import './PersonsTablePopup.scss'
 
 

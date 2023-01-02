@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ClearPersonFilterType, SetPersonFilterType, StateType } from './types'
+
 import { Person } from '@models/Person'
+
+import { ClearPersonFilterType, SetPersonFilterType, StateType } from './types'
 import { PersonsThunk } from './thunk'
 
 
