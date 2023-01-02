@@ -60,7 +60,7 @@ export const DeletePersonModal = ({ onClose, id }: IDeletePersonModalProps) => {
     <Modal
       className="delete-person-modal"
       title="Удалить человека"
-      visible={!!id}
+      open={!!id}
       onCancel={onClose}
       onOk={onDelete}
       okButtonProps={{

@@ -29,7 +29,7 @@ export const PersonTableActions = ({ popup }: IPersonTableActionsProps) => {
         Добавить
       </Button>
       <AddPersonModal
-        visible={isCreating}
+        open={isCreating}
         onClose={() => {
           setIsCreating(false) }
         }

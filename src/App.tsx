@@ -1,6 +1,6 @@
 import { Layout } from 'antd'
 
-import { Page500 } from '@pages/shared/Page500'
+import { ErrorPage } from '@app/pages/shared/ErrorPage'
 import { Preloader } from '@app/shared/molecules/Preloader'
 
 import { useRefresh } from './useRefresh'
@@ -21,7 +21,7 @@ const App = () => {
   return (
     <Layout className="app">
       <Content>
-        {isError ? <Page500 /> : <AppRouting />}
+        {isError ? <ErrorPage /> : <AppRouting />}
       </Content>
     </Layout>
   )

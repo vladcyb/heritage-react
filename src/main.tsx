@@ -6,7 +6,6 @@ import { store } from '@app/slices'
 
 import App from './App'
 
-import 'antd/dist/antd.css'
 import './index.scss'
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

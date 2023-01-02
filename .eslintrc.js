@@ -29,6 +29,7 @@ module.exports = {
     'css-import-order',
   ],
   'rules': {
+    'no-multi-spaces': 'error',
     'indent': [
       'error', 2, {
         SwitchCase: 1,
@@ -56,6 +57,10 @@ module.exports = {
       'never',
     ],
     'react/react-in-jsx-scope': 'off',
+    'react/jsx-curly-spacing': ['error', {
+      'when': 'never',
+    }],
+    'react/jsx-equals-spacing': [2, 'never'],
     'no-multiple-empty-lines': ['error', {
       'max': 2,
       'maxEOF': 0,
@@ -64,6 +69,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/jsx-tag-spacing': [2, {
       'beforeSelfClosing': 'always',
+      'beforeClosing': 'never',
     }],
     'comma-dangle': ['error', 'always-multiline'],
     'sort-imports':

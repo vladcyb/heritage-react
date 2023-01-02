@@ -40,7 +40,7 @@ export const PersonModalForm = ({ form, ...props }: IPersonModalFormProps) => (
     </Form.Item>
     <label htmlFor="dateOfBirth">Дата рождения:</label>
     <Form.Item name="dateOfBirth">
-      <DatePicker picker="date" />
+      <DatePicker picker="date" placeholder='Выберите дату' />
     </Form.Item>
   </Form>
 )

@@ -3,12 +3,12 @@ import { useEffect, useReducer } from 'react'
 import { Avatar, Button, Card, Col, Row } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
+import { NotFound } from '@pages/shared/NotFound'
 import PersonService from '@services/PersonService'
 import { Preloader } from '@app/shared/molecules/Preloader'
 import { layout } from '@shared/constants'
 import { ResponseStatusEnum } from '@enums/ResponseStatusEnum'
-import { Page500 } from '@pages/shared/Page500'
-import { Page404 } from '@pages/shared/Page404'
+import { ErrorPage } from '@app/pages/shared/ErrorPage'
 import { renderDataItem } from '@shared/helpers/renderDataItem'
 import { appUrls } from '@shared/appUrls'
 import { SexEnum } from '@enums/SexEnum'
@@ -48,11 +48,11 @@ export const PersonPage = () => {
   }
 
   if (state.status === ResponseStatusEnum.Status404) {
-    return <Page404 />
+    return <NotFound />
   }
 
   if (state.status !== ResponseStatusEnum.StatusOk) {
-    return <Page500 />
+    return <ErrorPage />
   }
 
   const { data } = state

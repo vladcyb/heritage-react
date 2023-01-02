@@ -3,6 +3,8 @@ import { lazy, Suspense } from 'react'
 
 import { appUrls } from '@shared/appUrls'
 
+import { NotFound } from './pages/shared/NotFound'
+
 const RegisterPage = lazy(() => import('@pages/RegisterPage'))
 const PersonPage = lazy(() => import('@pages/PersonPage'))
 const IndexPage = lazy(() => import('@pages/IndexPage'))
@@ -18,6 +20,7 @@ export const AppRouting = () => (
       <Route path={appUrls.person}>
         <Route path=":id" element={<PersonPage />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </Suspense>
 )

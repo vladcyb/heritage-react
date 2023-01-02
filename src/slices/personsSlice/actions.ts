@@ -4,6 +4,7 @@ import { Person } from '@models/Person'
 
 import { ClearPersonFilterType, SetPersonFilterType, UpdatePersonPayloadType } from './types'
 
+/* eslint-disable no-multi-spaces */
 export const actions = {
   update:              createAction<Person[]>                    ('persons/update'),
   create:              createAction<Person>                      ('persons/create'),
@@ -13,3 +14,4 @@ export const actions = {
   clearFilter:         createAction<ClearPersonFilterType>       ('persons/clearFilter'),
   clearAllFilters:     createAction                              ('persons/clearAllFilters'),
 }
+/* eslint-enable no-multi-spaces */

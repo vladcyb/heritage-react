@@ -4,7 +4,7 @@ import { Result } from 'antd'
 import { ERRORS } from '@shared/constants'
 import { appUrls } from '@shared/appUrls'
 
-export const Page500 = () => (
+export const ErrorPage = () => (
   <Result
     status="500"
     title={ERRORS.somethingWentWrong}
