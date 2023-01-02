@@ -1,6 +1,7 @@
-import instance from './axios'
 import { Person, PopulatedPerson } from '@models/Person'
 import { CreatePersonPayloadType, UpdatePersonPayloadType } from '@slices/personsSlice/types'
+
+import instance from './axios'
 
 
 export interface IPersonTableParams {

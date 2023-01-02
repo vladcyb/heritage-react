@@ -1,11 +1,12 @@
-import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createRoot } from 'react-dom/client'
-import 'antd/dist/antd.css'
+
 import { store } from '@app/slices'
+
 import App from './App'
 
+import 'antd/dist/antd.css'
 import './index.scss'
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

@@ -1,4 +1,5 @@
 import { Spin } from 'antd'
+
 import './Preloader.scss'
 
 export const Preloader = () => (

@@ -1,9 +1,11 @@
 import { ColumnsType } from 'antd/es/table'
+
 import { Person } from '@models/Person'
-import { personsSortFactory } from './personsSortFactory'
-import { getColumnFilterProps } from './getColumnFilterProps'
 import { PersonFiltersType } from '@slices/personsSlice/types'
 import { renderDataItem } from '@shared/helpers/renderDataItem'
+
+import { personsSortFactory } from './personsSortFactory'
+import { getColumnFilterProps } from './getColumnFilterProps'
 
 
 export const getPersonsColumns = (filters: PersonFiltersType): ColumnsType<Person> => [

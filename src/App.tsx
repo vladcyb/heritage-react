@@ -1,15 +1,15 @@
 import { Layout } from 'antd'
-import { Route, Routes } from 'react-router-dom'
-import { IndexPage, LoginPage } from './pages'
-import { appUrls } from '@shared/appUrls'
-import { useRefresh } from './useRefresh'
-import { PersonPage } from '@pages/PersonPage'
-import { Preloader } from '@components/shared/Perloader'
+
 import { Page500 } from '@pages/shared/Page500'
-import { RegisterPage } from '@pages/RegisterPage'
+import { Preloader } from '@app/shared/molecules/Preloader'
+
+import { useRefresh } from './useRefresh'
+import { AppRouting } from './AppRouting'
+
 import './App.scss'
 
 const { Content } = Layout
+
 
 const App = () => {
   const { isError, isLoading } = useRefresh()
@@ -18,27 +18,10 @@ const App = () => {
     return <Preloader />
   }
 
-  if (isError) {
-    return (
-      <Layout className="app">
-        <Content>
-          <Page500 />
-        </Content>
-      </Layout>
-    )
-  }
-
   return (
     <Layout className="app">
       <Content>
-        <Routes>
-          <Route path={appUrls.index} element={<IndexPage />} />
-          <Route path={appUrls.login} element={<LoginPage />} />
-          <Route path={appUrls.register} element={<RegisterPage />} />
-          <Route path={appUrls.person}>
-            <Route path=":id" element={<PersonPage />} />
-          </Route>
-        </Routes>
+        {isError ? <Page500 /> : <AppRouting />}
       </Content>
     </Layout>
   )

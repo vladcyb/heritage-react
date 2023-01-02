@@ -8,6 +8,10 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:import/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:css-import-order/recommended',
   ],
   'parser': '@typescript-eslint/parser',
   'parserOptions': {
@@ -21,6 +25,8 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'unused-imports',
+    'import',
+    'css-import-order',
   ],
   'rules': {
     'indent': [
@@ -60,10 +66,38 @@ module.exports = {
       'beforeSelfClosing': 'always',
     }],
     'comma-dangle': ['error', 'always-multiline'],
+    'sort-imports':
+     [
+       'error',
+       {
+         'ignoreCase': true,
+         'ignoreDeclarationSort': true,
+       },
+     ],
+    'import/order': ['error', {
+      'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
+      'pathGroups': [
+        {
+          'pattern': '@/**',
+          'group': 'internal',
+          'position': 'after',
+        },
+      ],
+      'newlines-between': 'always',
+    }],
+    'import/no-unresolved': 'error',
   },
   'settings': {
     'react': {
       'version': 'detect',
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      'typescript': {
+        'alwaysTryTypes': true,
+      },
     },
   },
 }

@@ -2,18 +2,21 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Checkbox, Table, Tag } from 'antd'
 import classNames from 'classnames'
+import { useSelector } from 'react-redux'
+import { CheckboxChangeEvent } from 'antd/es/checkbox'
+
 import { PersonsThunk } from '@slices/personsSlice/thunk'
 import { useAppDispatch } from '@app/slices'
-import { useSelector } from 'react-redux'
 import { getPersons } from '@slices/personsSlice/selectors'
-import { getPersonsColumns } from './helpers/getPersonsColumns'
 import { actions as personsActions } from '@slices/personsSlice/actions'
 import { Person } from '@models/Person'
 import { russianLabel } from '@shared/helpers/russianLabel'
-import { PersonTableActions } from './PersonTableActions'
-import { CheckboxChangeEvent } from 'antd/es/checkbox'
 import { SexEnum } from '@enums/SexEnum'
 import { appUrls } from '@shared/appUrls'
+
+import { PersonTableActions } from './PersonTableActions'
+import { getPersonsColumns } from './helpers/getPersonsColumns'
+
 import './PersonsTable.scss'
 
 type RowPopupStateType = {

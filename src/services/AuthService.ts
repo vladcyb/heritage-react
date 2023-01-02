@@ -1,5 +1,6 @@
-import instance from './axios'
 import { AxiosResponse } from 'axios'
+
+import instance from './axios'
 
 export interface ILoginRequest {
   login: string

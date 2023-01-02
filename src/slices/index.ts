@@ -1,6 +1,7 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import { userSlice } from './userSlice'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
+
+import { userSlice } from './userSlice'
 import { personsSlice } from './personsSlice'
 
 export const store = configureStore({

@@ -3,6 +3,7 @@ import { FormProps, Modal } from 'antd'
 import moment, { isMoment } from 'moment'
 import { useSelector } from 'react-redux'
 import { useForm } from 'antd/es/form/Form'
+
 import { PersonModalForm } from '@components/PersonsTable/PersonTableActions/PersonModalForm'
 import { getPersonsLoading } from '@slices/personsSlice/selectors'
 import { PersonsThunk } from '@slices/personsSlice/thunk'

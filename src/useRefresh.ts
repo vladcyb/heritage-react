@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+
 import AuthService from '@services/AuthService'
 import { appUrls } from '@shared/appUrls'
-import { useLocation, useNavigate } from 'react-router-dom'
 
 type UseRefreshReturn = {
   isLoading: boolean
@@ -22,7 +23,7 @@ export const useRefresh = (): UseRefreshReturn => {
         }
       })
       .catch((e) => {
-        if (e?.response?.status === 403) {
+        if (e?.response?.status === 401) {
           if (location.pathname !== appUrls.login && location.pathname !== appUrls.register) {
             navigate(appUrls.login, { replace: true })
           }

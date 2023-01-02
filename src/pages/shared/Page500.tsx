@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Result } from 'antd'
+
 import { ERRORS } from '@shared/constants'
 import { appUrls } from '@shared/appUrls'
 

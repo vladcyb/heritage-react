@@ -1,5 +1,7 @@
 import { createAction } from '@reduxjs/toolkit'
+
 import { Person } from '@models/Person'
+
 import { ClearPersonFilterType, SetPersonFilterType, UpdatePersonPayloadType } from './types'
 
 export const actions = {

@@ -1,9 +1,12 @@
+
 import { Button, Card, Form, Input } from 'antd'
-import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { getUser } from '@slices/userSlice/selectors'
+import { Link } from 'react-router-dom'
+
 import { appUrls } from '@shared/appUrls'
+import { getUser } from '@slices/userSlice/selectors'
+
 import './RegisterForm.scss'
 
 

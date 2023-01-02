@@ -2,6 +2,7 @@ import { FormProps, message, Modal } from 'antd'
 import { useSelector } from 'react-redux'
 import { isMoment } from 'moment'
 import { useForm } from 'antd/es/form/Form'
+
 import { useAppDispatch } from '@app/slices'
 import { PersonsThunk } from '@slices/personsSlice/thunk'
 import { getPersonsLoading } from '@slices/personsSlice/selectors'

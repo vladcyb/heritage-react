@@ -1,4 +1,5 @@
 import { createAction, createReducer } from '@reduxjs/toolkit'
+
 import { ResponseStatusEnum } from '@enums/ResponseStatusEnum'
 import { PopulatedPerson } from '@models/Person'
 

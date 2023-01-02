@@ -1,9 +1,10 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useReducer } from 'react'
-import PersonService from '@services/PersonService'
 import { Avatar, Button, Card, Col, Row } from 'antd'
-import { Preloader } from '@components/shared/Perloader'
 import { UserOutlined } from '@ant-design/icons'
+
+import PersonService from '@services/PersonService'
+import { Preloader } from '@app/shared/molecules/Preloader'
 import { layout } from '@shared/constants'
 import { ResponseStatusEnum } from '@enums/ResponseStatusEnum'
 import { Page500 } from '@pages/shared/Page500'
@@ -12,6 +13,7 @@ import { renderDataItem } from '@shared/helpers/renderDataItem'
 import { appUrls } from '@shared/appUrls'
 import { SexEnum } from '@enums/SexEnum'
 import { PersonReducer, PersonReducerActions } from '@shared/reducers/PersonReducer'
+
 import './PersonPage.scss'
 
 
@@ -44,7 +46,6 @@ export const PersonPage = () => {
   if (state.status === ResponseStatusEnum.StatusLoading) {
     return <Preloader />
   }
-
 
   if (state.status === ResponseStatusEnum.Status404) {
     return <Page404 />
