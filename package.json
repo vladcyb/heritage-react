@@ -10,6 +10,10 @@
     "prepare": "husky install",
     "fix-lint": "eslint --config .eslintrc.js src/**/*.{ts,tsx} --fix && stylelint \"src/**/*.scss\" --fix"
   },
+  "lint-staged": {
+    "src/*.{ts,tsx}": ["eslint --config .eslintrc.js src/**/*.{ts,tsx}", "tsc --noEmit"],
+    "src/*.scss": "stylelint \"src/**/*.scss\""
+  },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@reduxjs/toolkit": "^1.8.2",
@@ -41,6 +45,7 @@
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.1",
+    "lint-staged": "^13.1.0",
     "stylelint": "^14.16.1",
     "stylelint-config-standard-scss": "^4.0.0",
     "stylelint-scss": "^4.2.0",
